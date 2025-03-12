@@ -34,6 +34,15 @@ int main(void) {
     MX_GPIO_Init();
     MX_I2C1_Init();
     // Initialize ADXL343 accelerometer
+
+    HAL_Delay(100);  // Small delay for sensor startup
+
+        // Read Device ID (0x00 should return 0xE5)
+        uint8_t deviceID = ADXL343_ReadRegister(0x00);
+
+    if (deviceID != 0xE5) {
+            Error_Handler();  // If communication fails, enter error state
+        }
     ADXL343_Init();
 
     while (1) {
