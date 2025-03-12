@@ -60,8 +60,8 @@ all: main-build
 main-build: TEST\ BLINKY.elf secondary-outputs
 
 # Tool invocations
-TEST\ BLINKY.elf TEST\ BLINKY.map: $(OBJS) $(USER_OBJS) C:\Users\Preston\STM32CubeIDE\TEST\ BLINKY\TEST\ BLINKY\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "TEST BLINKY.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Preston\STM32CubeIDE\TEST BLINKY\TEST BLINKY\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST BLINKY.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+TEST\ BLINKY.elf TEST\ BLINKY.map: $(OBJS) $(USER_OBJS) C:\Users\Preston\Documents\GitHub\STM32-Accelerometer-Tail-Light\TEST\ BLINKY\TEST\ BLINKY\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "TEST BLINKY.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Preston\Documents\GitHub\STM32-Accelerometer-Tail-Light\TEST BLINKY\TEST BLINKY\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST BLINKY.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
