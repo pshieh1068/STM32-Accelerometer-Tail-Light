@@ -35,6 +35,7 @@ int main(void) {
     MX_I2C1_Init();
     // Initialize ADXL343 accelerometer
     ADXL343_Init();
+    HAL_Delay(100);
 
     while (1) {
         // Read activity status from the interrupt source register
