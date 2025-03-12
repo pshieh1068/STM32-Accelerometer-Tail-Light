@@ -44,6 +44,7 @@ int main(void) {
             Error_Handler();  // If communication fails, enter error state
         }
     ADXL343_Init();
+    HAL_Delay(100);
 
     while (1) {
         // Read activity status from the interrupt source register
