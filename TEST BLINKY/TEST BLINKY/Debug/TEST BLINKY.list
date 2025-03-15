@@ -142,6 +142,7 @@ int main(void) {
     }
 }
 
+//Accelerometer Initialization Function
 void ADXL343_Init(void) {
  80001a0:	b580      	push	{r7, lr}
  80001a2:	af00      	add	r7, sp, #0
@@ -232,6 +233,7 @@ uint8_t ADXL343_ReadRegister(uint8_t reg) {
 
 08000238 <MX_I2C1_Init>:
 
+//I2C Initialization Function
 static void MX_I2C1_Init(void) {
  8000238:	b580      	push	{r7, lr}
  800023a:	af00      	add	r7, sp, #0
@@ -285,6 +287,7 @@ static void MX_I2C1_Init(void) {
 
 0800028c <MX_GPIO_Init>:
 
+//GPIO Initialization Function
 static void MX_GPIO_Init(void) {
  800028c:	b580      	push	{r7, lr}
  800028e:	b086      	sub	sp, #24
@@ -338,6 +341,7 @@ static void MX_GPIO_Init(void) {
 
 080002e8 <SystemClock_Config>:
 
+//SystemClock Initialization Function
 void SystemClock_Config(void) {
  80002e8:	b580      	push	{r7, lr}
  80002ea:	b090      	sub	sp, #64	@ 0x40

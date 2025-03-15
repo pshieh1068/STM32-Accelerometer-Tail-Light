@@ -51,6 +51,7 @@ int main(void) {
     }
 }
 
+//Accelerometer Initialization Function
 void ADXL343_Init(void) {
     // Enable measurement mode
     ADXL343_WriteRegister(ADXL343_REG_POWER_CTL, 0x08);
@@ -72,6 +73,7 @@ uint8_t ADXL343_ReadRegister(uint8_t reg) {
     return value;
 }
 
+//I2C Initialization Function
 static void MX_I2C1_Init(void) {
     // Configure I2C peripheral
     hi2c1.Instance = I2C1;
@@ -86,6 +88,7 @@ static void MX_I2C1_Init(void) {
     HAL_I2C_Init(&hi2c1);
 }
 
+//GPIO Initialization Function
 static void MX_GPIO_Init(void) {
     // Enable clock for GPIOA
     __HAL_RCC_GPIOA_CLK_ENABLE();
@@ -99,6 +102,7 @@ static void MX_GPIO_Init(void) {
     HAL_GPIO_Init(LED_GPIO_PORT, &GPIO_InitStruct);
 }
 
+//SystemClock Initialization Function
 void SystemClock_Config(void) {
     RCC_OscInitTypeDef RCC_OscInitStruct = {0};
     RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
