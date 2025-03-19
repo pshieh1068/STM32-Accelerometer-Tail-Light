@@ -36,6 +36,14 @@ int main(void) {
     // Initialize ADXL343 accelerometer
     ADXL343_Init();
 
+    // Flash the LED 3 times at startup
+    for (int i = 0; i < 3; i++) {
+        HAL_GPIO_WritePin(LED_GPIO_PORT, LED_PIN, GPIO_PIN_SET);
+        HAL_Delay(200);
+        HAL_GPIO_WritePin(LED_GPIO_PORT, LED_PIN, GPIO_PIN_RESET);
+        HAL_Delay(200);
+    }
+
     while (1) {
         // Read activity status from the interrupt source register
         uint8_t int_source = ADXL343_ReadRegister(ADXL343_REG_INT_SOURCE);
@@ -51,7 +59,6 @@ int main(void) {
     }
 }
 
-//Accelerometer Initialization Function
 void ADXL343_Init(void) {
     // Enable measurement mode
     ADXL343_WriteRegister(ADXL343_REG_POWER_CTL, 0x08);
@@ -73,7 +80,6 @@ uint8_t ADXL343_ReadRegister(uint8_t reg) {
     return value;
 }
 
-//I2C Initialization Function
 static void MX_I2C1_Init(void) {
     // Configure I2C peripheral
     hi2c1.Instance = I2C1;
@@ -88,7 +94,6 @@ static void MX_I2C1_Init(void) {
     HAL_I2C_Init(&hi2c1);
 }
 
-//GPIO Initialization Function
 static void MX_GPIO_Init(void) {
     // Enable clock for GPIOA
     __HAL_RCC_GPIOA_CLK_ENABLE();
@@ -102,7 +107,6 @@ static void MX_GPIO_Init(void) {
     HAL_GPIO_Init(LED_GPIO_PORT, &GPIO_InitStruct);
 }
 
-//SystemClock Initialization Function
 void SystemClock_Config(void) {
     RCC_OscInitTypeDef RCC_OscInitStruct = {0};
     RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
