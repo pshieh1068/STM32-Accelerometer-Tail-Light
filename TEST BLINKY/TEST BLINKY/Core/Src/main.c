@@ -43,7 +43,7 @@ int main(void) {
         HAL_GPIO_WritePin(LED_GPIO_PORT, LED_PIN, GPIO_PIN_RESET);
         HAL_Delay(200);
     }
-
+/*
     while (1) {
         // Read activity status from the interrupt source register
         uint8_t int_source = ADXL343_ReadRegister(ADXL343_REG_INT_SOURCE);
@@ -132,10 +132,5 @@ void SystemClock_Config(void) {
     if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK) {
         Error_Handler();
     }
-}
-
-void Error_Handler(void) {
-    // Stay in infinite loop if an error occurs
-    while (1) {
-    }
+    */
 }
