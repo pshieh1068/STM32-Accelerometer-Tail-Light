@@ -18,8 +18,8 @@ I2C_HandleTypeDef hi2c1;
 #define LED_GPIO_PORT GPIOA
 
 void SystemClock_Config(void);
-static void MX_GPIO_Init(void);
-static void MX_I2C1_Init(void);
+//static void MX_GPIO_Init(void);
+//static void MX_I2C1_Init(void);
 void ADXL343_Init(void);
 uint8_t ADXL343_ReadRegister(uint8_t reg);
 void ADXL343_WriteRegister(uint8_t reg, uint8_t value);
@@ -29,12 +29,12 @@ int main(void) {
     // Initialize HAL library
     HAL_Init();
     // Configure system clock
-    SystemClock_Config();
+    //SystemClock_Config();
     // Initialize GPIO and I2C peripherals
-    MX_GPIO_Init();
-    MX_I2C1_Init();
+    //MX_GPIO_Init();
+    //MX_I2C1_Init();
     // Initialize ADXL343 accelerometer
-    ADXL343_Init();
+    //ADXL343_Init();
 
     // Flash the LED 3 times at startup
     for (int i = 0; i < 3; i++) {
